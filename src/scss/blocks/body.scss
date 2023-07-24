@@ -1,6 +1,14 @@
+@use '../mixins/responsive.scss' as *;
 html {
 }
 body {
   max-width: 1440px;
-  margin:30px auto;
+  margin:auto;
+  background-color: black;
+  color:white;
+  overflow: hidden;
+  // @include responsive(desktop) {}
+  // height: 100vh;
+  // margin-left:310px;
+  //  position: fixed;
 }

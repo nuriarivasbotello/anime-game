@@ -1,1 +1,41 @@
-
+@use '../mixins/pseudo.scss' as *;
+@use '../mixins/hover.scss' as *;
+@use '../mixins/responsive.scss' as *;
+.ov-btn-slide-top {
+    width: 200px;
+    margin-left:140px;
+    background: #fff; /* color de fondo */
+    color: #925aec; /* color de fuente */
+    border: 2px solid #925aec; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    &:hover{
+        color: #fff; /* color de fuente hover */
+        &::after{
+            left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+        }
+    }
+    &::after{
+        content: "";
+    background: #925aec; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    }
+  }
