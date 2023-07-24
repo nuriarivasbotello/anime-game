@@ -6,8 +6,14 @@
     margin-left:140px;
     background: #fff; /* color de fondo */
     color: #925aec; /* color de fuente */
+    font-size: 20px;
+    font-family: var(--font);
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
     border: 2px solid #925aec; /* tamaño y color de borde */
-    padding: 16px 20px;
+    padding:20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
@@ -39,3 +45,10 @@
     transition: all 0.35s;
     }
   }
+  .ov-btn-slide-top--move{
+    margin-left:0px;
+  }
+  .ov-btn-slide-top--size{
+    width: 300px;
+  }
+

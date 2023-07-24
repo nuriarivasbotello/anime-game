@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Jolly Roger</title>
+</head>
+<body data-mode="jolly-roger" class="body">
+    <div class="menu">
+        <h2>GUESS THE JOLLY ROGER</h2>
+        <button id="button-start" data-button="button">START</button>
+    </div>
+    <div class="jolly-quiz">
+        <section class="square">
+            <img class="jolly--icon" id="jolly" src="./assets/images/jolly/chopper.png" alt="Chopper"/>
+        </section>
+        <section class="answers">
+            <button class="answer"></button>
+            <button class="answer"></button>
+            <button class="answer"></button>
+            <button class="answer"></button>
+        </section>
+    </div>
+    <footer class="footer footer--move">
+
+        <a href="menu-game.html" class="ov-btn-slide-top ov-btn-slide-top--move">Back to menu</a>
+    </footer>
+    <script
+    type="module"
+    src="./js/jolly-roger.js"
+  ></script>  
+</body>
+
+</html>
