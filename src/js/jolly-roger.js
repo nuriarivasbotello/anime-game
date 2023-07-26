@@ -4,6 +4,7 @@ const buttonStart = document.getElementById('button-start');
 const answersElement = document.getElementById('answers');
 const namesArray = ['zoro', 'brook', 'franky', 'robin', 'chopper'];
 let userPlay;
+let counter = 0;
 const gameOptions = {
   //gameOptions
   zoro: {
@@ -32,6 +33,7 @@ const gameOptions = {
     src: './assets/images/jolly/chopper.png'
   }
 };
+let correctAnswer;
 //Objeto con imágenes
 //Aleatorio del array de nombres
 //Al hacer click, que funcione y salga el aleatorio del array
@@ -42,6 +44,7 @@ const createdOptions = name => {
     const newButton = document.createElement('button');
     newButton.classList.add('answer');
     newButton.textContent = option;
+    newButton.dataset.answer = option;
     answersElement.append(newButton);
   }
 };
@@ -60,11 +63,23 @@ const randomResult = () => {
   console.log(namesArray[randomNumber]);
 };
 
-let counter = 0;
 //Cuando la respuesta sea correcta (event target usuario) hacer el counter ++ y aplicarlo a createdOptions
+const comparedAnswer = name => {
+  correctAnswer = gameOptions[name].correctAnswer;
+  if (userPlay === correctAnswer) {
+  } else {
+    console.log('Error');
+  }
+  createdOptions(name);
+};
+comparedAnswer();
 //Para saber el correcto hacer un objeto de pregunta. ID fuera y question
 //un contador=0 (posicion de la pregunta), event.target para saber que respuesta
-
+//evento click respuesta, funcion que evalue la respuesta con if (el counter va dentro si quiero seguir en la pregunta)
+answersElement.addEventListener('click', event => {
+  userPlay = event.target.dataset.answer;
+  console.log(userPlay);
+});
 buttonStart.addEventListener('click', () => {
   randomResult();
 });
