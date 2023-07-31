@@ -34,12 +34,10 @@ const gameOptions = {
   }
 };
 let correctAnswer;
-//Objeto con imágenes
-//Aleatorio del array de nombres
-//Al hacer click, que funcione y salga el aleatorio del array
-//Que se cree texto en los cuadritos
-//Que la foto que se genere, aparezca el nombre en los cuadritos y sea el true
+
 const createdOptions = name => {
+  answersElement.textContent = '';
+  correctAnswer = gameOptions[name].correctAnswer;
   for (const option of gameOptions[name].options) {
     const newButton = document.createElement('button');
     newButton.classList.add('answer');
@@ -50,35 +48,28 @@ const createdOptions = name => {
 };
 const showResult = name => {
   jollyRoger.src = gameOptions[name].src;
-
-  //recibe el name
-  //
-  //console.log(name);
   createdOptions(name);
 };
 const randomResult = () => {
   const randomNumber = Math.floor(Math.random() * namesArray.length);
   showResult(namesArray[randomNumber]);
-
+  //esta es la opcion correcta
   console.log(namesArray[randomNumber]);
 };
-
-//Cuando la respuesta sea correcta (event target usuario) hacer el counter ++ y aplicarlo a createdOptions
-const comparedAnswer = name => {
-  correctAnswer = gameOptions[name].correctAnswer;
+const comparedAnswer = answer => {
   if (userPlay === correctAnswer) {
+    answer.classList.add('green');
+    console.log('Has cogido ' + userPlay + ' y has acertado');
+    randomResult();
   } else {
-    console.log('Error');
+    answer.classList.add('red');
+    console.log('Has cogido ' + userPlay + ' y has fallado');
   }
-  createdOptions(name);
 };
-comparedAnswer();
-//Para saber el correcto hacer un objeto de pregunta. ID fuera y question
-//un contador=0 (posicion de la pregunta), event.target para saber que respuesta
-//evento click respuesta, funcion que evalue la respuesta con if (el counter va dentro si quiero seguir en la pregunta)
+
 answersElement.addEventListener('click', event => {
   userPlay = event.target.dataset.answer;
-  console.log(userPlay);
+  comparedAnswer(event.target);
 });
 buttonStart.addEventListener('click', () => {
   randomResult();
