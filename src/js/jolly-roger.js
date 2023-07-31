@@ -2,6 +2,8 @@ import '../scss/styles.scss';
 const jollyRoger = document.getElementById('jolly');
 const buttonStart = document.getElementById('button-start');
 const answersElement = document.getElementById('answers');
+const footerElement = document.getElementById('footer');
+const buttonContinueElement = document.getElementById('button-continue');
 const namesArray = ['zoro', 'brook', 'franky', 'robin', 'chopper'];
 let userPlay;
 let counter = 0;
@@ -59,18 +61,23 @@ const randomResult = () => {
 const comparedAnswer = answer => {
   if (userPlay === correctAnswer) {
     answer.classList.add('green');
+    buttonContinueElement.classList.remove('hidden');
     console.log('Has cogido ' + userPlay + ' y has acertado');
-    randomResult();
+    //randomResult();
   } else {
     answer.classList.add('red');
     console.log('Has cogido ' + userPlay + ' y has fallado');
   }
 };
-
 answersElement.addEventListener('click', event => {
   userPlay = event.target.dataset.answer;
   comparedAnswer(event.target);
 });
 buttonStart.addEventListener('click', () => {
   randomResult();
+});
+buttonContinueElement.addEventListener('click', event => {
+  event.preventDefault();
+  randomResult();
+  buttonContinueElement.classList.add('hidden');
 });

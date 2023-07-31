@@ -1,12 +1,7 @@
 /* ESTILOS DEL FOOTER */
 .footer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: end;
-    position: relative;
-    top:500px;
-}
-.footer--move{
-    top:230px;
+    margin-top:200px;
 }

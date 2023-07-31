@@ -3,7 +3,6 @@
 @use '../mixins/responsive.scss' as *;
 .ov-btn-slide-top {
     width: 200px;
-    margin-left:140px;
     background: #fff; /* color de fondo */
     color: #925aec; /* color de fuente */
     font-size: 20px;
@@ -44,11 +43,5 @@
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
     }
-  }
-  .ov-btn-slide-top--move{
-    margin-left:0px;
-  }
-  .ov-btn-slide-top--size{
-    width: 300px;
   }
 
