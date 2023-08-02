@@ -4,14 +4,14 @@
 .ov-btn-slide-top {
     width: 200px;
     background: #fff; /* color de fondo */
-    color: #925aec; /* color de fuente */
+    color: var(--color-primary); /* color de fuente */
     font-size: 20px;
     font-family: var(--font);
     flex-direction: column;
     justify-content: center;
     align-content: center;
     text-align: center;
-    border: 2px solid #925aec; /* tamaño y color de borde */
+    border: 2px solid var(--color-primary); /* tamaño y color de borde */
     padding:20px;
     border-radius: 3px; /* redondear bordes */
     position: relative;
@@ -31,7 +31,7 @@
     }
     &::after{
         content: "";
-    background: #925aec; /* color de fondo hover */
+    background: var(--color-primary); /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -43,5 +43,13 @@
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
     }
+  }
+  .button-start{
+    width: 100px;
+    height: 30px;
+    margin:35px 0 35px 0;
+    position: relative;
+    bottom:30px;
+    border: 2px solid var(--color-primary);
   }
 

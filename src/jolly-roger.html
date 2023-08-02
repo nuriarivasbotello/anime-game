@@ -10,12 +10,22 @@
 </head>
 <body data-mode="jolly-roger" class="body">
     <div class="menu">
-        <h2 class="menu__title">Guess The Mugiwaras' Jolly Roger</h2>
-        <button id="button-start" data-button="button">START</button>
+        <h2 class="title-game">THE MUGIWARA'S JOLLY ROGER</h2>
+        <div id="counter" class="counter hidden">
+            <div class="mistakes" id="misses">
+                <p>Misses</p>
+                <p class="" id="result-misses">0/10</p>
+            </div>
+            <div class="corrects" id="hits">
+                <p>Hits</p>
+                <p class="" id="result-hits">0/10</p>
+            </div>
+        </div>
+        <button class="button-start" id="button-start" data-button="button">START</button>
     </div>
     <div class="jolly-quiz">
         <section class="square">
-            <img class="jolly--icon" id="jolly" src="./assets/images/question.png" alt="Chopper"/>
+            <img class="jolly--icon jolly--move" id="jolly" src="./assets/images/question.png" alt="quiz"/>
         </section>
         <section class="answers" id="answers">
             <!-- <button class="answer"></button>

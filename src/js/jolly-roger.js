@@ -4,6 +4,11 @@ const buttonStart = document.getElementById('button-start');
 const answersElement = document.getElementById('answers');
 const footerElement = document.getElementById('footer');
 const buttonContinueElement = document.getElementById('button-continue');
+const counterElement = document.getElementById('counter');
+const missesElement = document.getElementById('misses');
+const hitsElement = document.getElementById('hits');
+const missesResultElement = document.getElementById('result-misses');
+const hitsResultElement = document.getElementById('result-hits');
 let namesArray = [
   'zoro',
   'brook',
@@ -129,29 +134,51 @@ const randomResult = () => {
   //esta es la opcion correcta
   //console.log(namesArray[randomNumber]);
 };
+let misses = 0;
+let hits = 0;
+const counterResult = () => {
+  if (userPlay === correctAnswer) {
+    hitsResultElement.textContent = hits + '/10';
+    hitsElement.append(hitsResultElement);
+  } else {
+    missesResultElement.textContent = misses + '/10';
+    missesElement.append(missesResultElement);
+  }
+};
 const comparedAnswer = answer => {
   if (userPlay === correctAnswer) {
     answer.classList.add('green');
+    answersElement.classList.add('disabled');
     buttonContinueElement.classList.remove('hidden');
+    hits = hits + 1;
+    counterResult();
     stopGame();
     console.log('Has cogido ' + userPlay + ' y has acertado');
   } else {
     answer.classList.add('red');
+    answersElement.classList.add('disabled');
+    buttonContinueElement.classList.remove('hidden');
+    misses = misses + 1;
+    counterResult();
+
     console.log('Has cogido ' + userPlay + ' y has fallado');
   }
   console.log(namesArray);
 };
-//Hacer que cuando coja la correcta, se elimine del array hasta el último, puedo usar splice
+
 answersElement.addEventListener('click', event => {
   userPlay = event.target.dataset.answer;
   comparedAnswer(event.target);
 });
 buttonStart.addEventListener('click', () => {
   buttonStart.classList.add('hidden');
+  counterElement.classList.remove('hidden');
   randomResult();
+  //Aquí tiene que aparecer el contador
 });
 buttonContinueElement.addEventListener('click', event => {
   event.preventDefault();
   randomResult();
+  answersElement.classList.remove('disabled');
   buttonContinueElement.classList.add('hidden');
 });

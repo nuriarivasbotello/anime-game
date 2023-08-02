@@ -5,18 +5,20 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top:30px;
+
+
 }
 .square{
     width: 400px;
     height: 300px;
-    background-color: #925aec72;
+    background-color: rgba(255, 255, 255, 0.132);
     border: 4px white solid;
 }
 .jolly--icon{
     width: 250px;
     margin:25px auto;
     align-items: center;
+    
 }
 .answers{
     width: 400px;
@@ -27,17 +29,22 @@
     grid-template-rows: 50% 50%;
 }
 .answer{
-    border: 2px #925aec dotted ;
+    border: 2px var(--color-primary) dotted ;
     height: 50px;
+    font-family: var(--font);
     background: none;
     color: white;
 }
 .green{
-    background: green;
+    background: rgb(63, 233, 63);
 }
 .red{
     background: red;
 }
 .hidden{
     display: none;
+}
+.disabled{
+    cursor: not-allowed;
+    pointer-events:none;
 }
