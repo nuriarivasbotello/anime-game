@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 const jollyRoger = document.getElementById('jolly');
 const buttonStart = document.getElementById('button-start');
+const buttonMenu = document.getElementById('button-menu');
 const answersElement = document.getElementById('answers');
 const footerElement = document.getElementById('footer');
 const buttonContinueElement = document.getElementById('button-continue');
@@ -100,6 +101,7 @@ let correctAnswer;
 const stopGame = () => {
   if (namesArray.length < 1) {
     console.log('No hay más');
+    answersElement.classList.add('hidden');
     buttonContinueElement.classList.add('hidden');
     const newButtonStop = document.createElement('p');
     newButtonStop.classList.add('finish-message');
@@ -145,6 +147,7 @@ const counterResult = () => {
     missesElement.append(missesResultElement);
   }
 };
+const paintedCorrectAnswer = () => {};
 const comparedAnswer = answer => {
   if (userPlay === correctAnswer) {
     answer.classList.add('green');
@@ -155,7 +158,9 @@ const comparedAnswer = answer => {
     stopGame();
     console.log('Has cogido ' + userPlay + ' y has acertado');
   } else {
+    paintedCorrectAnswer();
     answer.classList.add('red');
+    console.log('answersElement.children[0]');
     answersElement.classList.add('disabled');
     buttonContinueElement.classList.remove('hidden');
     misses = misses + 1;
@@ -169,9 +174,11 @@ const comparedAnswer = answer => {
 answersElement.addEventListener('click', event => {
   userPlay = event.target.dataset.answer;
   comparedAnswer(event.target);
+  //console.log(event.target.dataset.answer);
 });
 buttonStart.addEventListener('click', () => {
   buttonStart.classList.add('hidden');
+  buttonMenu.classList.remove('ov-btn-slide-top--move');
   counterElement.classList.remove('hidden');
   randomResult();
   //Aquí tiene que aparecer el contador

@@ -3,23 +3,22 @@
 @use '../mixins/responsive.scss' as *;
 .ov-btn-slide-top {
     width: 200px;
-    background: #fff; /* color de fondo */
-    color: var(--color-primary); /* color de fuente */
-    font-size: 20px;
-    font-family: var(--font);
+    height: 60px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    text-align: center;
-    border: 2px solid var(--color-primary); /* tamaño y color de borde */
-    padding:20px;
+    align-items: center;
+    background: none; /* color de fondo */
+    color: white; /* color de fuente */
+    font-size: 20px;
+    font-family: var(--font);
+    border: 2px solid white; /* tamaño y color de borde */
     border-radius: 3px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
-    display: inline-block;
     &:hover{
-        color: #fff; /* color de fuente hover */
+        color: black; /* color de fuente hover */
         &::after{
             left: 0;
     right: 0;
@@ -31,7 +30,7 @@
     }
     &::after{
         content: "";
-    background: var(--color-primary); /* color de fondo hover */
+    background: white; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -44,12 +43,24 @@
     transition: all 0.35s;
     }
   }
+  .ov-btn-slide-top--move{
+position: relative;
+bottom:-110px;
+  }
   .button-start{
     width: 100px;
-    height: 30px;
+    height: 40px;
     margin:35px 0 35px 0;
     position: relative;
-    bottom:30px;
-    border: 2px solid var(--color-primary);
+    bottom:80px;
+    border: 2px solid white;
+    font-family: var(--font);
+    color:white;
+    background:none;
+    &:hover{
+      color:black;
+        border: 2px solid black;
+        background-color: white;
+    }
   }
 

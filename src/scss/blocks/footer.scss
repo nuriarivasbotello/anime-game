@@ -1,14 +1,23 @@
 /* ESTILOS DEL FOOTER */
 .footer{
     position: relative;
+    top:475px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top:80px;
+  gap:30px;
+}
+.footer--move{
+  position: relative;
+  top:200px;
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+  gap:30px;
 }
 .finish-message{
     position: absolute;
-    bottom:60px;
+    bottom:50px;
     font-size: 30px;
     font-family: var(--font);
     color:white;
