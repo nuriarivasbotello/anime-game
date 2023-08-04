@@ -6,17 +6,21 @@ import '../scss/styles.scss';
 let slider = document.querySelector('.slider-contenedor');
 let sliderIndividual = document.querySelectorAll('.contenido-slider');
 const menuElementOption = document.getElementById('menu');
+const mainElementOption = document.getElementById('main');
 const buttonLink = document.getElementById('link');
 let counter = 1;
-let width = sliderIndividual[0].clientWidth;
+//let width = sliderIndividual[0].clientWidth;
 let interval = 1800;
 
-const showMenu = () => {};
-menuElementOption.classList.remove('hidden');
-buttonLink.addEventListener('click', event => {
-  userPlay = event.target.dataset.button;
-  showMenu;
-});
+// const showMenu=event=>{
+//   userPlay=event.target.dataset.button;
+//   mainElementOption.classList.add('hidden');
+//   menuElementOption.classList.remove()
+// }
+// buttonLink.addEventListener('click', event => {
+//   userPlay = event.target.dataset.button;
+//   showMenu;
+// });
 
 window.addEventListener('resize', function () {
   width = sliderIndividual[0].clientWidth;
@@ -30,7 +34,6 @@ function slides() {
   slider.style.transform = 'translate(' + -width * counter + 'px)';
   slider.style.transition = 'transform .8s';
   counter++;
-
   if (counter == sliderIndividual.length) {
     setTimeout(function () {
       slider.style.transform = 'translate(0px)';
