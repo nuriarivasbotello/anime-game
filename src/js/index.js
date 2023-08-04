@@ -5,9 +5,20 @@ import '../scss/styles.scss';
 //setinterval cada 2 s cambie variable de css, transform translate -100 o 100%
 let slider = document.querySelector('.slider-contenedor');
 let sliderIndividual = document.querySelectorAll('.contenido-slider');
+const menuElementOption = document.getElementById('menu');
+const buttonLink = document.getElementById('link');
 let counter = 1;
 let width = sliderIndividual[0].clientWidth;
 let interval = 1800;
+let userPlay;
+
+const showMenu = () => {
+  menuElementOption.classList.add('hidden');
+};
+buttonLink.addEventListener('click', event => {
+  userPlay = event.target.dataset.button;
+  showMenu();
+});
 
 window.addEventListener('resize', function () {
   width = sliderIndividual[0].clientWidth;
