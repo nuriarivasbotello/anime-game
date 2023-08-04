@@ -10,14 +10,12 @@ const buttonLink = document.getElementById('link');
 let counter = 1;
 let width = sliderIndividual[0].clientWidth;
 let interval = 1800;
-let userPlay;
 
-const showMenu = () => {
-  menuElementOption.classList.add('hidden');
-};
+const showMenu = () => {};
+menuElementOption.classList.remove('hidden');
 buttonLink.addEventListener('click', event => {
   userPlay = event.target.dataset.button;
-  showMenu();
+  showMenu;
 });
 
 window.addEventListener('resize', function () {
